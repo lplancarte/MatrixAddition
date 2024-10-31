@@ -8,18 +8,21 @@ Description: extends Thread and performs submatrix addition
 ThreadOperation constructor takes in two matrices and a string to indicate
 quadrant. The result is stored in 2-D array C.
 */
+
+enum Quadrant {
+		I,
+		II,
+		III,
+		IV
+	};
+
 public class ThreadOperation extends Thread{
 
 	//Class Variables
 	private int[][] A;
 	private int[][] B;
 	private int[][] C;
-	private enum Quadrant {
-		I,
-		II,
-		III,
-		IV
-	};
+
 	private Quadrant q;
 	//https://www.w3schools.com/java/java_enums.asp
 
