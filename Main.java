@@ -58,14 +58,22 @@ public class Main
 		System.out.println("Printing test array: blue");
 		print2dArray(blue);
 
+		System.out.println("\nPrinting test array: red");
+		print2dArray(red);
+
 		
 
 
 	}//end main()
 
 	public static void print2dArray(int[][] matrix){
-		//TODO print array given
-		System.out.printf("TODO: PRINT ARRAY");
+		//print array given
+		for(int i = 0; i < matrix.length; i++){
+			for(int j = 0; j < matrix[i].length; j++){
+				System.out.printf("%4d",matrix[i][j]);
+			}
+			System.out.println();
+		}
 	}
 
 }//end class Main
