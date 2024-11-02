@@ -85,7 +85,7 @@ public class Main
 		else
 			processFile(inputFile);
 
-
+		System.out.printf("ROW: %d\nCOL: %d\n",NUM_ROW, NUM_COL);
 
 	}//end main()
 
@@ -148,6 +148,10 @@ public class Main
 		try{
 			Scanner reader = new Scanner(inputFile);
 			line = reader.nextLine(); //get row and col from this line
+			String[] rowCol = line.split(" ");
+			NUM_ROW = Integer.parseInt(rowCol[0]);
+			NUM_COL = Integer.parseInt(rowCol[1]);
+
 			while(reader.hasNextLine()){
 				line = reader.nextLine();
 
