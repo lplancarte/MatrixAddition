@@ -27,19 +27,66 @@ public class ThreadOperation extends Thread{
 	//https://www.w3schools.com/java/java_enums.asp
 
 	//Constructor
-	public ThreadOperation(int[][] A, int[][] B, Quadrant q){
+	public ThreadOperation(int[][] A, int[][] B, int[][] C, Quadrant q){
 		this.A = A;
 		this.B = B;
+		this.C = C;
 		this.q = q;
 	}
 
 	@Override
 	public void run(){
+		//get row and col from A
+		int ROW = A.length;
+		int COL = A[0].length;
 		//TODO: Add quadrants of matrices A and B set to C
-		this.C = new int[0][0];
+		switch(q){
+
+			case I:{
+				for(int i=0; i<(ROW/2);i++){
+					for(int j=0; j<(COL/2);j++){
+						C[i][j] = A[i][j] + B[i][j];
+					}
+				}
+			};
+			break;
+			case II:{
+				for(int i=0; i<(ROW/2);i++){
+					for(int j=(COL/2); j<COL;j++){
+						C[i][j] = A[i][j] + B[i][j];
+					}
+				}
+			};
+			break;
+			case III:{
+				for(int i=(ROW/2); i<ROW;i++){
+					for(int j=0; j<(COL/2);j++){
+						C[i][j] = A[i][j] + B[i][j];
+					}
+				}
+			};
+			break;
+			case IV:{
+				for(int i=(ROW/2); i<ROW;i++){
+					for(int j=(COL/2); j<COL;j++){
+						C[i][j] = A[i][j] + B[i][j];
+					}
+				}
+			};
+			break;
+
+		}
+
+
+
 	}
 
 	public int[][] getResult(){
 		return this.C;
 	}
+
+
+
+
+
 }

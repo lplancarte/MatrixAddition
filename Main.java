@@ -111,10 +111,14 @@ public class Main
 
 		//Instantiate 4 ThreadOperation objects
 		System.out.println("Creating 4 ThreadOperation Objects");
-		ThreadOperation upperRight = new ThreadOperation(blue,red,Quadrant.I);
-		ThreadOperation upperLeft = new ThreadOperation(blue,red,Quadrant.II);
-		ThreadOperation lowerRight = new ThreadOperation(blue,red,Quadrant.III);
-		ThreadOperation lowerLeft = new ThreadOperation(blue,red,Quadrant.IV);
+		ThreadOperation upperRight = new ThreadOperation
+									(blue,red,purple,Quadrant.I);
+		ThreadOperation upperLeft = new ThreadOperation
+									(blue,red,purple,Quadrant.II);
+		ThreadOperation lowerRight = new ThreadOperation
+									(blue,red,purple,Quadrant.III);
+		ThreadOperation lowerLeft = new ThreadOperation
+									(blue,red,purple,Quadrant.IV);
 		//Start them
 		upperRight.start();
 		upperLeft.start();
