@@ -194,19 +194,27 @@ public class Main
 	*Dual matrices one on top of the other (2xrow)xcol
 	*/
 	static private void processFile(File inputFile){
-		String line = "";
-		int count = 0;
+		//String line = "";
+		//int count = 0;
 		try{
 			Scanner reader = new Scanner(inputFile);
-			line = reader.nextLine(); //get row and col from this line
-			String[] rowCol = line.split(" ");
-			ROW = Integer.parseInt(rowCol[0]);
-			COL = Integer.parseInt(rowCol[1]);
+			//line = reader.nextLine(); //get row and col from this line
+			//String[] rowCol = line.split(" ");
+			//ROW = Integer.parseInt(rowCol[0]);
+			//COL = Integer.parseInt(rowCol[1]);
+
+			//Feedback implementation
+			ROW = reader.nextInt();
+			COL = reader.nextInt();
 
 			//Create Arrays red, blue, and purple,fill with 0's
 			createArrays(ROW,COL);
 			//Fill arrays blue and red with data from file
-			while(reader.hasNextLine()){
+			fillArray(ROW,COL,blue,reader);
+			fillArray(ROW,COL,red,reader);
+
+
+			/*while(reader.hasNextLine()){
 				line = reader.nextLine();
 
 				//split row into col
@@ -222,11 +230,29 @@ public class Main
 				}
 				count++;
 				//System.out.println();
-			}//end while
+			}*/ //end while
 			//DO SOMETHING POSSIBLY
 		}catch(Exception e){};
 
 	}//end processFile()
+
+	/**
+	*fillArray() fills an array with values from a file using a Scanner.
+	*@param - int row - Number of Rows to fill
+	*@param - int col - Number of Columns to fill
+	*@param - int[][] array - The double integer array to fill
+	*@param - Scanner rdr - used to read in data from file
+	*@VOID RETURN
+	*/
+	public static void fillArray(int row,int col,int[][] array,Scanner rdr){
+		for(int i=0; i<row; i++){
+			for(int j=0; j<col; j++){
+				array[i][j] = rdr.nextInt();
+			}
+		}
+
+
+	}//end fillArray()
 
 
 	/**		createArrays(int rows, int cols)
@@ -240,7 +266,7 @@ public class Main
 		blue = new int[rows][cols];
 		red = new int[rows][cols];
 		purple = new int[rows][cols];
-	}
+	}//end createArrays()
 
 
 }//end class Main
