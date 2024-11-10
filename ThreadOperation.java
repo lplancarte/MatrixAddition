@@ -39,7 +39,6 @@ public class ThreadOperation extends Thread{
 		//get row and col from A
 		int ROW = A.length;
 		int COL = A[0].length;
-		//TODO: Add quadrants of matrices A and B set to C
 		switch(q){
 
 			case I:{
@@ -81,6 +80,7 @@ public class ThreadOperation extends Thread{
 
 	}
 
+	//Not used.
 	public int[][] getResult(){
 		return this.C;
 	}

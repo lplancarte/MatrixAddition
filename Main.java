@@ -4,6 +4,8 @@ Modified: 31-OCT-2024
 Description: Use threads to split up matrix addition.
 			Part 1 of 2: Read in numbers from file and fill in arrays
 			Print arrays to terminal
+
+			Part 2 of 2: Add matrices; report to terminal
 */
 
 /*
@@ -235,7 +237,6 @@ public class Main
 				count++;
 				//System.out.println();
 			}*/ //end while
-			//DO SOMETHING POSSIBLY
 		}catch(Exception e){};
 
 	}//end processFile()
